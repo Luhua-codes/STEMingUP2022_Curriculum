@@ -1,6 +1,8 @@
 let age = 10;
 
-if(age <= 1) {
+if(age < 0)
+    console.log("Invalid");
+else if(age <= 1) {
     console.log("Baby");
     console.log("Your ticket is free!");
 }else if(age < 4) {
