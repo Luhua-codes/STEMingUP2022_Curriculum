@@ -14,3 +14,6 @@ tempC = Math.round(5/9 * (tempF - 32));
 console.log(tempF + ' degrees Fahrenheit is equal to ' + tempC + ' degrees Celcius.');
 
 //Q3
+let grade = 100;
+
+//if()
