@@ -1,9 +1,4 @@
-const a = ["one", "two", "three"];
-console.log(a);
-a.push(1);
-a.push(2);
-a.push(3);
-console.log(a);
+const drinks = ["coffee", "tea", "latte", "juice"];
+drinks[7] = "water";
 
-const b = ["one", "two", "three", 1, 2, 3];
-console.log(b);
+drinks.forEach(myDrink => console.log("Took a sip of " + myDrink));
