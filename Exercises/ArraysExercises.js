@@ -26,3 +26,19 @@ console.log(`Please buy ${items}.`);
 console.log(`\n${groceryList.shift()} was bought.`);
 console.log(`${groceryList.pop()} was bought.`);
 console.log(`${groceryList.splice(2, 1)} was bought.`);
+
+//Q6
+let milkIndex = groceryList.indexOf("milk");
+console.log(milkIndex > -1 ? "\nStill need to buy milk." : "\nAlready have milk.");
+
+//Q6 challenge
+groceryList.splice(milkIndex, 1); //remove my lowercase element of "milk"
+groceryList.push("MILK"); //add all uppercase element of "MILK" to test case insensitivity
+
+let inList = false;
+groceryList.forEach(item => {
+    if(item.toLowerCase() === "milk") {
+        inList = true;
+    }
+});
+console.log(inList ? "Still need to buy milk." : "Already have milk.");
