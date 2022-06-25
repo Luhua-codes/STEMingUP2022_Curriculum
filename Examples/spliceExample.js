@@ -15,7 +15,7 @@ console.log(fruits);
 * New elements "Lemon" and "Kiwi" were inserted at index 2, after "Orange" and before "new fruit"
 */
 
-fruits.splice(1, 2); //delete "Orange" and "Lemon" without leaving undefined holes
+fruits.splice(1, 2); //delete "Orange" and "Lemon" without leaving undefined holes (delete 2 elements, starting from the one at index 1)
 console.log(fruits);
 
 //remaining elements: [ 'Banana', 'Kiwi', 'new fruit' ]
