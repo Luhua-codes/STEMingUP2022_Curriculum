@@ -11,15 +11,18 @@ groceryList.push("eggs");
 groceryList.forEach(item => console.log(`Please buy ${item}.`));
 
 //Q3
+console.log(`\n${groceryList.slice(1, 4).join(", ")} are on sale.`);
+
+//Q4
 console.log(`\nPlease buy ${groceryList.join(", ")}.`);
 
-//Q3 challenge
+//Q4 challenge
 let items = groceryList.join(", ");
 let lastItemLen = groceryList[groceryList.length - 1].length;
 items = items.slice(0, items.length - lastItemLen - 1) + " and" + items.slice(items.length - lastItemLen - 1);
 console.log(`Please buy ${items}.`);
 
-//Q4
+//Q5
 console.log(`\n${groceryList.shift()} was bought.`);
 console.log(`${groceryList.pop()} was bought.`);
 console.log(`${groceryList.splice(2, 1)} was bought.`);
