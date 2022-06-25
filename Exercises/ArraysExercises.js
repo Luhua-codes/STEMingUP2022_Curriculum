@@ -18,3 +18,8 @@ let items = groceryList.join(", ");
 let lastItemLen = groceryList[groceryList.length - 1].length;
 items = items.slice(0, items.length - lastItemLen - 1) + " and" + items.slice(items.length - lastItemLen - 1);
 console.log(`Please buy ${items}.`);
+
+//Q4
+console.log(`\n${groceryList.shift()} was bought.`);
+console.log(`${groceryList.pop()} was bought.`);
+console.log(`${groceryList.splice(2, 1)} was bought.`);
