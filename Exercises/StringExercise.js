@@ -13,3 +13,7 @@ console.log(location);
 
 //Q5
 console.log(city[1] + ' ' + country[1] + ' ' + location[1]);
+
+//Q6
+console.log(location.toUpperCase());
+console.log(location.toLowerCase());
