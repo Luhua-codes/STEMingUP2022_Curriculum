@@ -1,6 +1,5 @@
 function foo(){
-    let bar = "Hello World";
-    return bar;
+    return "Hello World";
 }
 
 console.log(foo()); //prints "Hello World"
