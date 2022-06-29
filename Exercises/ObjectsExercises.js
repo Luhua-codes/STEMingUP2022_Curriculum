@@ -33,3 +33,7 @@ printPerson = function (person) {
 } //students can directly replace the original function
 printPerson(person0);
 printPerson(person1);
+
+//Q6
+delete person0.middleName;
+printPerson(person0);
