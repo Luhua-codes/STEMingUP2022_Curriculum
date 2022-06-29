@@ -1,14 +1,8 @@
 class Chair {
-    constructor(colour, seatSize, seatHeight) {
-        this.colour = colour;
-        this.seatSize = seatSize; //inches
+    constructor(seatHeight) {
         this.seatHeight = seatHeight; //inches
 
         //assigned with default values
-        this.backSupport = false;
-        this.headSupport = false;
-        this.padding = false;
-        this.armRests = false;
         this.heightAdjustable = false;
     }
 
@@ -33,17 +27,11 @@ class Chair {
 class OfficeChair extends Chair {
     static countOfficeChairs = 0; //keeps track of the total number of office chairs
     static #price = 200; //private variable
+    static type = "Office Chair"; //new property, identifies the type of chair
 
-    constructor(colour, seatSize, seatHeight) { //overloaded constructor with default values assigned
-        super(colour, seatSize, seatHeight); //calls the constructor belonging to the superclass (Chair)
+    constructor(seatHeight) { //overloaded constructor with default values assigned
+        super(seatHeight); //calls the constructor belonging to the superclass (Chair)
         OfficeChair.countOfficeChairs++; //whenever a new office chair is made, increase the counter
-        this.type = "Office Chair"; //new property, identifies the type of chair
-
-        //default values that are different for an office chair
-        this.backSupport = true;
-        this.headSupport = true;
-        this.padding = true;
-        this.armRests = true;
         this.heightAdjustable = true;
     }
 
@@ -60,10 +48,10 @@ class OfficeChair extends Chair {
     };
 
     static generateBill() {
-        super.generateBill(this.#price, "Office Chair", this.countOfficeChairs);
+        super.generateBill(this.#price, OfficeChair.type, this.countOfficeChairs);
     }
 }
 
-const officeChair0 = new OfficeChair("Black", 15, 12);
-const officeChair1 = new OfficeChair("Red", 20, 15);
+const officeChair0 = new OfficeChair(12);
+const officeChair1 = new OfficeChair(15);
 OfficeChair.generateBill();
