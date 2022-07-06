@@ -1,3 +1,6 @@
-let firstName = "John";
-let lastName = "Doe";
-console.log(firstName, lastName);
+class Test{
+    constructor() {
+    }
+}
+
+console.log(typeof Test)
