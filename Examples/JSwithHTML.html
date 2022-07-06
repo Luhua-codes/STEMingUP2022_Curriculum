@@ -2,9 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>My Site</title>
+    <script>
+        function changeText(){
+            if(document.getElementById("sText").innerText === "Starting text")
+                document.getElementById("sText").innerText = "Button pressed. Text changed.";
+            else
+                document.getElementById("sText").innerText = "Starting text";
+        }
+    </script>
 </head>
 <body>
-
+<p id="sText">Starting text</p>
+<button type="button" onclick="changeText()" id="textChanger">Change Text</button>
 </body>
 </html>
