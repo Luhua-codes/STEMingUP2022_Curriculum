@@ -7,10 +7,10 @@ document.getElementById("imgSwap").onclick = function () { //add onclick attribu
 
     //when button pressed, change to the other image
     if (kardImg.getAttribute("src") === "KARD M Countdown.webp") { //use getAttribute to see what the current src is
-        newImg.setAttribute("src", "KARD Ride on the Wind.webp"); //use setAttribute to assign a new value to src
+        newImg.setAttribute("src", "https://raw.githubusercontent.com/Luhua-codes/STEMingUP2022_Curriculum/main/DOM/KARD%20Ride%20on%20the%20Wind.webp"); //use setAttribute to assign a new value to src
         newImg.setAttribute("alt", "KARD Ride on the Wind");
     } else {
-        newImg.setAttribute("src", "KARD M Countdown.webp");
+        newImg.setAttribute("src", "https://raw.githubusercontent.com/Luhua-codes/STEMingUP2022_Curriculum/main/DOM/KARD%20M%20Countdown.webp");
         newImg.setAttribute("alt", "KARD M Countdown");
     }
 
