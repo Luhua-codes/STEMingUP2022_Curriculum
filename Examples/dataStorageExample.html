@@ -10,15 +10,26 @@
 <p>Button clicks:</p>
 <p id="clickCounter"></p>
 
+<div>
+    <button onclick="nextLetter()" type="button">Next Letter</button>
+    <p>Alphabet:</p>
+    <p id="Letter">A</p>
+</div>
+
 <script>
+    const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+    let currentLetter = 0;
+    sessionStorage.setItem('currentItem', 'A'); //initialize the current letter
+
     initializeClickCounter(); //if a click count exists, display it on the screen
+
     function initializeClickCounter(){
         document.getElementById('clickCounter').innerText = localStorage.getItem("clickCount");
     }
 
     function clickCounter() {
         if (localStorage.clickCount) //if clickCount is > 0
-            localStorage.clickCount = Number(localStorage.clickCount) + 1; //increase clickCount
+            localStorage.clickCount = Number(localStorage.clickCount) + 1; //increase clickCount (using object property dot notation)
         else
             localStorage.clickCount = 1; //initialize clickCount property in localStorage object
         document.getElementById("clickCounter").innerText = localStorage.clickCount;
@@ -27,6 +38,15 @@
     function clearClicks(){ //delete clickCount
         localStorage.removeItem('clickCount');
         document.getElementById('clickCounter').innerText = '';
+    }
+
+    function nextLetter(){
+        if(currentLetter < 25)
+            currentLetter++; //increase currentLetter index by 1
+        else
+            currentLetter = 0; //if current letter is Z, reset back to A
+        sessionStorage.setItem('currentItem', alphabet[currentLetter]); //update session storage
+        document.getElementById("Letter").innerText = sessionStorage.getItem("currentItem");
     }
 </script>
 </body>
