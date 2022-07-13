@@ -6,16 +6,27 @@
 </head>
 <body>
 <button onclick="clickCounter()" type="button">Click</button>
+<button onclick="clearClicks()" type="button">Clear click count</button>
 <p>Button clicks:</p>
 <p id="clickCounter"></p>
 
 <script>
+    initializeClickCounter(); //if a click count exists, display it on the screen
+    function initializeClickCounter(){
+        document.getElementById('clickCounter').innerText = localStorage.getItem("clickCount");
+    }
+
     function clickCounter() {
         if (localStorage.clickCount) //if clickCount is > 0
             localStorage.clickCount = Number(localStorage.clickCount) + 1; //increase clickCount
         else
             localStorage.clickCount = 1; //initialize clickCount property in localStorage object
         document.getElementById("clickCounter").innerText = localStorage.clickCount;
+    }
+
+    function clearClicks(){ //delete clickCount
+        localStorage.removeItem('clickCount');
+        document.getElementById('clickCounter').innerText = '';
     }
 </script>
 </body>
