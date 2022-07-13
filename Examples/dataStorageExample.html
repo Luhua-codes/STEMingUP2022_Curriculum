@@ -2,9 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Data Storage</title>
 </head>
 <body>
+<button onclick="clickCounter()" type="button">Click</button>
+<p>Button clicks:</p>
+<p id="clickCounter"></p>
 
+<script>
+    function clickCounter() {
+        if (localStorage.clickCount) //if clickCount is > 0
+            localStorage.clickCount = Number(localStorage.clickCount) + 1; //increase clickCount
+        else
+            localStorage.clickCount = 1; //initialize clickCount property in localStorage object
+        document.getElementById("clickCounter").innerText = localStorage.clickCount;
+    }
+</script>
 </body>
 </html>
