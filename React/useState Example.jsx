@@ -34,8 +34,8 @@ function Car() {
     })
 
     const updateColour = () => {
-        setCar(previousState => { //retain info from previous state
-            return {...previousState, colour: "blue"}
+        setCar(prevState => { //retain info from previous state
+            return {...prevState, colour: "blue"}
         });
     }
 
