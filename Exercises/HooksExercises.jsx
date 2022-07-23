@@ -1,4 +1,5 @@
 import {useState} from "react";
+import ReactDOM from "react-dom/client";
 
 //Q1 original code
 /*class Q5 extends React.Component{
@@ -38,3 +39,6 @@ function Clicker() {
         </div>
     );
 }
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Clicker/>);
