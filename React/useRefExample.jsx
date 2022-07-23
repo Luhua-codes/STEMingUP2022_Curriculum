@@ -23,7 +23,7 @@ function Renders() {
 
 //focus the input field after button pressed (instead of button focus)
 function Focus() {
-    const inputElement = useRef(); //no initial current value since current will be used for the input field
+    const inputElement = useRef(); //empty initial current value; current will be used for the input field
     const focusInput = () => {
         inputElement.current.focus(); //put focus onto current value from inputElement (returned by useRef)
     };
@@ -36,6 +36,30 @@ function Focus() {
     );
 }
 
+//track previous state values
+function PrevState() {
+    const [inputValue, setInputValue] = useState("");
+    const previousInputValue = useRef(""); //initial current same as inputValue's initial state
+
+    useEffect(() => { //runs when initially rendered and when inputValue is updated
+        previousInputValue.current = inputValue; //assign inputValue to previousInputValue's current (stores value before newest update since re-render is not caused by useRef)
+    }, [inputValue]); //inputValue dependency
+
+    return (
+        <div>
+            <input
+                type="text" //text input field
+                value={inputValue} //set initial value as inputValue (empty string as initial state)
+                onChange={(e) => setInputValue(e.target.value)} //when text field changed (ex. user inputs text), update inputValue with the content of the text field
+            />
+            <h2>Current Value: {inputValue}</h2> <!--display current inputValue-->
+            <h2>Previous Value: {previousInputValue.current}</h2> <!--display previous inputValue (stored by previousInputValue.current)-->
+        </div>
+    );
+}
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Renders />);
-root.render(<Focus/>)
+root.render(<Focus/>);
+root.render(<PrevState/>);
