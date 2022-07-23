@@ -7,9 +7,9 @@ function Component1() { //"top" component
     const [user, setUser] = useState("Jesse Hall"); //create a user state with value "Jesse Hall"
 
     return (
-        <UserContext.Provider value={user}> <!--provider is Component5 -> pass Component1.user as props value to Component5 user context-->
-            <h1>{`Hello ${user}!`}</h1> <!--user context has been updated, will print with "Jesse Hall" as value-->
-            <Component2 user={user}/> <!--user context has been updated, will print with "Jesse Hall" as value-->
+        <UserContext.Provider value={user}> <!--give user as state value to context Provider, all components in tree to Component5 will be able to access-->
+            <h1>{`Hello ${user}!`}</h1> <!--using user state, prints "Hello Jesse Hall"-->
+            <Component2 user={user}/> <!--user context updated through tree, will print Component5 with "Hello again, Jesse Hall!"-->
         </UserContext.Provider>
     );
 }
@@ -47,7 +47,7 @@ function Component5() { //"innermost" component
     return (
         <div>
             <h1>Component 5</h1>
-            <h2>{`Hello ${user} again!`}</h2> <!--using context which has user value-->
+            <h2>{`Hello again, ${user}!`}</h2> <!--using context which has user value-->
         </div>
     );
 }
