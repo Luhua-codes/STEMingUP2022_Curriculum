@@ -51,8 +51,12 @@ class Square extends Rectangle { //can inherit from a class that extends another
         super(sideLength, sideLength); //length and width are the same
     }
 
-    //calls inherited methods (area, perimeter, print) since they are not re-implemented
-    //square width/length values will always be the same, should only return 1 value -> re-implement setters and getters to be different from Rectangle
+    //calls inherited methods (area, perimeter) since they are not re-implemented
+    //square width/length values will always be the same, should only return 1 value -> re-implement print, setters, and getters to be different from Rectangle
+    print(){
+        console.log(`This is a ${this.constructor.name} with side length ${this.width}. The area is ${this.area()} and the perimeter is ${this.perimeter()}.`);
+    }
+
     getSideLength() {
         return this.width;
     }
@@ -66,11 +70,20 @@ class Square extends Rectangle { //can inherit from a class that extends another
 let myPolygon = new Polygon(10);
 console.log(myPolygon); //log json
 myPolygon.print(); //calls Polygon.print()
+console.log();
 
 let myRectangle = new Rectangle(2, 4);
 console.log(myRectangle); //log json
 myRectangle.print(); //calls Rectangle.print()
+console.log(`Rectangle with width ${myRectangle.getWidth()} and length ${myRectangle.getLength()}.`);
+myRectangle.setLength(10);
+console.log("Length changed to 10.");
+myRectangle.print();
+console.log();
 
 let mySquare = new Square(3);
 console.log(mySquare); //log json
 mySquare.print(); //calls Rectangle.print()
+mySquare.setSideLength(20);
+console.log(`Side length changed to ${mySquare.getSideLength()}.`);
+mySquare.print();
