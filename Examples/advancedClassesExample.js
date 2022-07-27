@@ -6,10 +6,8 @@ class Chair {
         this.heightAdjustable = false;
     }
 
-    //abstract methods
     adjustHeight() {
     };
-
     moveChair() {
     };
 
