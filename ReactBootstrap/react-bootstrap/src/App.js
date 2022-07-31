@@ -1,10 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
-
 //component imports
+import logo from './logo.svg';
 import Button from 'react-bootstrap/Button';
 
-import 'bootstrap/dist/css/bootstrap.min.css'; //import stylesheet
+//import stylesheet
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 function App() {
   return (
