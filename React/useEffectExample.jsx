@@ -24,11 +24,11 @@ function Counter() {
     }, [count]); //dependencies array (useEffect only called after initial render if these values updated)
 
     return (
-        <>
+        <div>
             <p>Count: {count}</p>
             <button onClick={() => setCount((c) => c + 1)}>+</button>
             <p>Calculation: {calculation}</p>
-        </>
+        </div>
     );
 }
 

@@ -15,7 +15,7 @@ function getSavedValue(key, value) {
 
 //hook to keep data in local storage (persist data) across browser sessions
 //key = referenced for the stored data
-export default function useLocalStorage(key, initialValue) { //new custom hook
+export function useLocalStorage(key, initialValue) { //new custom hook
     const [value, setValue] = useState(() => { //custom hook can call existing hook (useState)
         return getSavedValue(key, initialValue); //on first component render, load JSON version of initialValue
     }); //subsequent renders will
@@ -28,7 +28,7 @@ export default function useLocalStorage(key, initialValue) { //new custom hook
 }
 
 //logs to console whenever value updates occur
-export default function useUpdateLogger(value) {
+export function useUpdateLogger(value) {
     useEffect(() => {
         console.log(value)
     }, [value]); //value dependency -> runs whenever value changes
